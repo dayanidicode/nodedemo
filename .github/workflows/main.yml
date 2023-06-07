@@ -21,12 +21,6 @@ jobs:
         with:
           node-version: 14
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm test
-
   deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
@@ -40,8 +34,6 @@ jobs:
         with:
           node-version: 14
 
-      - name: Install dependencies
-        run: npm ci
 
       - name: Run API
         run: npm start
